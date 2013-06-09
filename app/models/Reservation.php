@@ -2,7 +2,7 @@
 
 class Reservation extends Eloquent
 {
-    protected $timestamps = false;
+    public $timestamps = false;
 
     public function user()
     {

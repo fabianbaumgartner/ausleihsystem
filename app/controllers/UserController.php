@@ -21,9 +21,11 @@ class UserController extends BaseController
         $password = Input::get('password');
 
         if (Auth::attempt(array('email' => $email, 'password' => $password))) {
-            return 'passt';
+            return Redirect::to('/');
         } else {
-            return 'NÖ';
+            return Redirect::to('login')
+                ->withInput()
+                ->withErrors(array('email' => 'Benutzer oder Passwort falsch'));
         }
     }
 

@@ -20,5 +20,5 @@ Route::post('register', 'UserController@doRegistration');
 
 Route::group(array('before' => 'auth'), function()
 {
-    Route::get('startseite', 'bla ');
+    Route::get('/', 'ReservationController@showDashboard');
 });
